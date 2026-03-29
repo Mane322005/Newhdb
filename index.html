@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+
+    h1 {
+      position: absolute;
+      top: 30px;
+      color: #444;
+      font-size: 32px;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ff9aa2;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff6f91;
+    }
+
+    .video-box {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 20px;
+      background: #ffffffaa;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+    }
+
+    video {
+      width: 320px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="text">Happy Birthday Devil</h1>
+
+  <button id="btn" onclick="playAll()">Click Me</button>
+
+  <div class="video-box" id="videoBox">
+    <video id="video" src="birthday.mp4"></video>
+  </div>
+
+  <audio id="audio" src="Downloade.mp3"></audio>
+
+  <script>
+    function playAll() {
+      let video = document.getElementById("video");
+      let audio = document.getElementById("audio");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let box = document.getElementById("videoBox");
+
+      btn.style.display = "none";       // remove button
+      box.style.display = "block";      // show video box
+      text.style.opacity = "1";         // show text
+
+      video.play();
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
